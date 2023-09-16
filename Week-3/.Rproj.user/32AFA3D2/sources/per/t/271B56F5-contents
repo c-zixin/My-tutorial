@@ -1,0 +1,534 @@
+---
+pdf_document: default
+author: "Chen Zi Xin"
+date: "`r Sys.Date()`"
+output:
+  html_document: null
+  df_print: paged
+  pdf_document: default
+title: "Week-3: Code-along"
+---
+
+  ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# I. Code to edit and execute
+
+**To be submitted on canvas before attending the tutorial**
+
+
+### Loading packages
+
+```{r, eval=FALSE,echo=TRUE}
+# Load package tidyverse
+
+```
+
+### Assigning values to variables
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+# Example a.: execute this example
+x <- 'A'
+x
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x <- 'B'
+x
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x <- 'c'
+x
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x <- 'd'
+x
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x <- 'e'
+x 
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x <- 'f'
+x
+```
+
+### Checking the type of variables
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+# Example a.: execute this example
+x <- 'A'
+typeof(x)
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<-'b'
+typeof(x)
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x <-'c'
+typeof(x)
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<-'d'
+typeof(x)
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<-'e'
+typeof(x)
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<-'f'
+typeof(x)
+
+```
+
+### Need for data types
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+read.csv("cat-lovers.csv")
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=FALSE,echo=TRUE}
+mean(cat_lovers$number_of_cats)
+[1] NA
+#Warning message:
+#In mean.default(cat_lovers$number_of_cats) :
+#  argument is not numeric or logical: returning NA
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+?mean
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=FALSE,echo=TRUE}
+mean(as.integer(cat_lovers$number_of_cats))
+[1] NA
+#Warning message:
+#In mean(as.integer(cat_lovers$number_of_cats)) : NAs introduced by coercion
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=FALSE,echo=TRUE}
+cat_lovers$number_of_cats 
+ [1] "0"                                                  
+ [2] "0"                                                  
+ [3] "1"                                                  
+ [4] "3"                                                  
+ [5] "3"                                                  
+ [6] "2"                                                  
+ [7] "1"                                                  
+ [8] "1"                                                  
+ [9] "0"                                                  
+[10] "0"                                                  
+[11] "0"                                                  
+[12] "0"                                                  
+[13] "1"                                                  
+[14] "3"                                                  
+[15] "3"                                                  
+[16] "2"                                                  
+[17] "1"                                                  
+[18] "1"                                                  
+[19] "0"                                                  
+[20] "0"                                                  
+[21] "1"                                                  
+[22] "1"                                                  
+[23] "0"                                                  
+[24] "0"                                                  
+[25] "4"                                                  
+[26] "0"                                                  
+[27] "0"                                                  
+[28] "0"                                                  
+[29] "0"                                                  
+[30] "0"                                                  
+[31] "0"                                                  
+[32] "0"                                                  
+[33] "0"                                                  
+[34] "0"                                                  
+[35] "0"                                                  
+[36] "0"                                                  
+[37] "0"                                                  
+[38] "0"                                                  
+[39] "0"                                                  
+[40] "0"                                                  
+[41] "0"                                                  
+[42] "0"                                                  
+[43] "1"                                                  
+[44] "3"                                                  
+[45] "3"                                                  
+[46] "2"                                                  
+[47] "1"                                                  
+[48] "1.5 - honestly I think one of my cats is half human"
+[49] "0"                                                  
+[50] "0"                                                  
+[51] "1"                                                  
+[52] "0"                                                  
+[53] "1"                                                  
+[54] "three"                                              
+[55] "1"                                                  
+[56] "1"                                                  
+[57] "1"                                                  
+[58] "0"                                                  
+[59] "0"                                                  
+[60] "2"  
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=FALSE,echo=TRUE}
+as.numeric(cat_lovers$number_of_cats)
+#[1]  0  0  1  3  3  2  1  1  0  0  0  0  1  3  3  2  1  1  0  0  1  1  0  0  4  0  0  0  0  0  0  0  0
+#[34]  0  0  0  0  0  0  0  0  0  1  3  3  2  1 NA  0  0  1  0  1 NA  1  1  1  0  0  2
+#Warning message:
+#NAs introduced by coercion 
+
+```
+
+### Create an empty vector
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x <- vector ()
+typeof(x)
+```
+
+### Create vectors of type logical
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<-vector("logical",length=5)
+print(x)
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<- logical (5)
+print(x)
+
+print(typeof(x))
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<-c(TRUE,FALSE,TRUE,FALSE,TRUE)
+print(x)
+
+print(typeof(x))
+
+```
+
+### Create vectors of type character
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<- vector("character", length = 5)
+print(typeof(x))
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<- character (5)
+typeof(x)
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<-c('A','B','C')
+typeof(x)
+
+```
+
+### Create vectors of type integer
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x <-vector("integer",length = 5)
+print(typeof(x))
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<-integer(5)
+print(typeof(x))
+
+print(x)
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<-c(1,2,3,4,5)
+typeof(x)
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<-seq(from=1,to=5,by=0.1)
+typeof(x)
+
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<-1:5
+typeof(x)
+
+```
+
+### Create vectors of type double
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<-vector("double",length = 5)
+typeof(x)
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<-double(5)
+typeof(x)
+
+```
+
+```{r,warning=TRUE,message=FALSE,eval=TRUE,echo=TRUE}
+x<-c(1.787,0.63573,2.3890)
+typeof(x)
+
+```
+
+### Implicit coercion
+
+#### Example 1
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x<-c(1.8)
+typeof(x)
+
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x<-c(x,'a')
+typeof(x)
+
+
+```
+
+#### Example 2
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x<-c(TRUE)
+typeof(x)
+
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x<-c(x,20)
+typeof(x)
+
+```
+
+#### Example 3
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x<-c('a')
+typeof(x)
+
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x<-c(x,TRUE)
+typeof(x)
+
+
+```
+
+
+#### Example 4
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x<-c(1L)
+typeof(x)
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- c(x,2)
+typeof(x)
+
+```
+
+### Explicit coercion
+
+#### Example 1
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x<-c(1L)
+typeof(x)
+
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x <- as.character(x)
+typeof(x)
+
+
+```
+
+#### Example 2
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x<-c('A')
+typeof(x)
+
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x<- as.numeric(x)
+typeof(x)
+
+
+```
+
+### Accessing elements of the vector
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+# Create a vector
+x <- c(1,10,9,8,1,3,5)
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+x[3]
+
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+# Access elements with consecutive indices, 2 to 4: 2,3,4
+x[2:4]
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+# Access elements with non-consecutive indices, 1,3,5
+x[c(1,3,5)]
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+# Access elements using logical vector
+x[c(TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE)]
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+# Access elements using the conditional operator <
+x[x<10]
+
+```
+
+### Examining vectors
+
+```{r,warning=TRUE,message=TRUE,eval=FALSE,echo=TRUE}
+# Display the length of the vector
+print(length(x))
+
+# Display the type of the vector
+print(typeof(x))
+
+# Display the structure of the vector
+print(str(x))
+
+```
+
+### Lists
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+# Initialise a named list
+my_pie = list(type="key lime", diameter=7, is.vegetarian=TRUE)
+# display the list
+my_pie$type
+my_pie$diameter
+my_pie$is.vegetarian
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+# Print the names of the list
+my_pie$type
+
+my_pie$diameter
+
+my_pie$is.vegetarian
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+# Retrieve the element named type
+my_pie$type
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+# Retrieve a truncated list
+my_pie["type"]
+
+
+```
+
+```{r,warning=TRUE,message=TRUE,eval=TRUE,echo=TRUE}
+# Retrieve the element named type
+my_pie$type
+
+```
+
+#### Exploring data-sets
+
+```{r,warning=TRUE,message=TRUE,eval=FALSE,echo=TRUE}
+# Install package
+install.packages("openintro")
+# Load the package
+library(openintro)
+# Load package
+library(tidyverse)
+```
+
+```{r,warning=TRUE,message=TRUE,eval=FALSE,echo=TRUE}
+# Catch a glimpse of the data-set: see how the rows are stacked one below another
+glimpse(loans_full_schema)
+```
+
+
+```{r,warning=TRUE,message=TRUE,eval=FALSE,echo=TRUE}
+# Selecting numeric variables
+loans <- loans_full_schema %>% # <-- pipe operator
+  select(paid_total, term, interest_rate,
+         annual_income,paid_late_fees,debt_to_income)
+# View the columns stacked one below another
+glimpse(loans)
+```
+
+```{r,warning=TRUE,message=TRUE,eval=FALSE,echo=TRUE}
+# Selecting categoric variables
+loans <- loans_full_schema %>% 
+  select(paid_total,term, interest_rate,annual_income,paid_late_fees,debt_to_income ) # type the chosen columns as in the lecture slide
+# View the columns stacked one below another
+glimpse(loans)
+```

@@ -1,0 +1,23 @@
+---
+title: "Challenge 1"
+author: "Chen Zi Xin"
+date: "2023-08-14"
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## About Me
+
+I am Chen Zi Xin, year 1 freshie studying Division In Industrial Design at NUS! I am staying in Raffles Hall and we have lots of chickens roaming around all the time.Very excited to be here!
+```{r, out.height= "300px",out.width= "500px",echo=TRUE,eval=TRUE,fig.cap="Graduated in May yipee"}
+knitr::include_graphics("/Users/chenzixin/Documents/NM2207/Week-1/photo3.jpg")
+```
+
+```{r, out.height= "300px",out.width= "500px",echo=TRUE,eval=TRUE,fig.cap="Challenge 1 Done!"}
+knitr::include_graphics("/Users/chenzixin/Documents/NM2207/Week-1/ss.png")
+```
+
