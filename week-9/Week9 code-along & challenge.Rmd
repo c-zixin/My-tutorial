@@ -1,0 +1,150 @@
+---
+title: "Week-9"
+author: "Chen Zi Xin"
+date: "2023-10-16"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+##slide 8
+```{r,eval= TRUE, echo=TRUE}
+tidydata <- tribble(
+     ~country, ~year, ~cases, ~population,
+     "Afghanistan", 1999, 745, 19987071,
+     "Afghanistan", 2000, 2666, 20595360,
+     "Brazil", 1999, 37737, 172006362,
+     "Brazil", 2000, 80488, 174504898,
+     "China", 1999, 212258, 1272915272,
+     "China", 2000, 213766, 1280428583)
+
+
+```
+
+```{r,eval= TRUE, echo=TRUE}
+nontidydata <- tribble(
+     ~country,~year,~rate,
+     "Afghanistan", 1999, "745/19987071",
+      "Afghanistan", 2000, "2666/20595360",
+     "Brazil", 1999, "37737/172006362",
+     "Brazil", 2000, "80488/174504898",
+     "China", 1999, "212258/1272915272",
+     "China", 2000, "213766/1280428583")
+
+
+
+```
+<br>
+##slide 11
+```{r,eval= TRUE, echo=TRUE}
+tidieddata <- nontidydata %>%
+     separate(rate, into = c("cases",
+                             "population"),
+             sep = "/")
+
+
+```
+<br>
+##slide 12
+```{r,eval= TRUE, echo=TRUE}
+newtidieddata <- tidieddata %>%
+pivot_longer(
+cols = cases:population,
+names_to = "measurement",
+values_to = "value"
+)
+newtidieddata
+
+```
+<br>
+##slide 14
+```{r,eval= TRUE, echo=TRUE}
+df <- tribble(
+~id, ~bp1, ~bp2,
+"A", 100, 120,
+"B", 140, 115,
+"C", 120, 125
+)
+df
+
+  
+df %>%
+pivot_longer(
+cols = bp1:bp2,
+names_to = "measurement",
+values_to = "value"
+)
+
+
+```
+
+<br>
+##slide 18
+```{r,eval= TRUE, echo=TRUE}
+newtidieddata %>%
+pivot_wider(names_from="measurement",
+values_from="value")
+```
+
+<br>
+##slide 19
+```{r,eval= TRUE, echo=TRUE}
+df <- tribble(
+~id, ~measurement, ~value,
+"A", "bp1", 100,
+"B", "bp1", 140,
+"B", "bp2", 115,
+"A", "bp2", 120,
+"A", "bp3", 105
+)
+df
+
+df %>%
+pivot_wider(
+names_from = measurement,
+values_from = value
+)
+
+```
+
+##Challenge 9 question 1 
+<br>
+
+```{r,eval= TRUE, echo=TRUE}
+library(tidyverse)
+billboard
+
+billboard_new <- billboard %>% 
+          pivot_longer(
+                  cols = starts_with("wk"),
+                  names_to = "week",
+                  values_to = "rank",
+                  values_drop_na = TRUE)%>%
+         mutate(week = parse_number(week))
+
+ggplot(billboard_new, aes(x=week, y= rank)) +
+geom_line(alpha =0.7) +
+labs(title = "Song Rank Over Weeks",
+x="Week",
+y="Rank") 
+
+          
+```
+<br>
+## Challenge 9 question 2
+```{r,eval= TRUE, echo=TRUE}
+cms_patient_experience
+
+cms_wider <- cms_patient_experience %>%
+             pivot_wider(names_from = measure_cd,
+             values_from= prf_rate,
+             id_cols = starts_with("org"))
+
+head(cms_wider)
+```
+
