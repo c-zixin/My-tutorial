@@ -1,0 +1,23 @@
+---
+title: "Week-10: Diary Entry"
+author: "Chen Zi Xin"
+date: "2023-10-19"
+output:
+  html_document: default
+  pdf_document: default
+---
+**Week 9**
+The theme of my data story is successful dating and breaking down the factors, mainly focusing on personality traits. I currently have a data set from Kaggle on speed dating which covers multiple factors of what people look for in a partner.	 
+
+**Week 10**
+
+The question that I will answer is: Finding the right one - what makes an ideal partner? This question is important as according to an article by TodayOnline, we are in the " slowest decade of population growth since 1970". Based on another article by TodayOnline, the lack of confidence plays a big part as "It’s usually those who are quiet, socially awkward... they don't know how to make themselves attractive and it slowly snowballs", as shared by an interviewee. In addition to Zula's recent article, "Survey Shows 81% Of Singaporeans Prefer To Date Someone Kind, Physical Attributes Not As Important", it mentions that "81% of the respondents also mentioned that being kind is more important than physical attributes" and this motivates to me further pick out important attributes to help single and lost individuals better understand what could improve their chances of getting matched. As speed dating is becoming increasingly popular, it is crucial to be well-prepared beforehand to match effectively. Not only is it important to know what you can bring to the table but also to know what the opposite party is looking for.
+
+1. Matches (to narrow down to successful cases)
+2. Age (see which age range has more succes cases)
+3. attr ,sinc ,intel ,fun ,amb ,shar (different attributes)
+4. Gender (Visualise Male vs Female data sets)
+5. Field (Consider the other factors like what they study, other interests)
+6. Age (See which age range is the golden period to look for love)
+
+I think the data set is quite big as there were many stages to the survey and it gets a little overwhelming cleaning the data as there are many filters and I think it would be the hardest part. To make things easier, I made sure to know what I want to get from the data set, like a flow chart so I can filter out the data step by step. I realised that planning out what to do is important also as there are many ways to filter the data, it really depends on how the data needs to be visualised. If I want to compare it, I need numerical data and I have to clean it up and ensure that I convert the data or split it properly. To ovecome this, I started writing down the specific data I want and really spend time planning with the purpose of filtered data in mind.
