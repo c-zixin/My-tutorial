@@ -47,6 +47,8 @@ Overall, this project was much more manageable than expected. The codes did not 
 
 [1200 words]
 
+Webpage: https://c-zixin.github.io/
+
 Montoya, A. (2016, May 9). Speed dating experiment. Kaggle. https://www.kaggle.com/datasets/annavictoria/speed-dating-experiment 
 Tan, J. T. (2023, August 2). Survey shows 81% of Singaporeans prefer to date someone kind, physical attributes not as important. ZULA.sg. https://zula.sg/singaporeans-changing-dating-preferences/ 
 Noshizaman. (2023, July 4). The transformative power of sincerity in relationships. Medium. https://medium.com/@noshizaman4/the-transformative-power-of-sincerity-in-relationships-e4ff5dca4625#:~:text=It%20fosters%20trust%2C%20nurtures%20authenticity,cornerstone%20of%20healthy%2C%20fulfilling%20relationships.  
